@@ -8445,3 +8445,11 @@ its documented shared-pole-death checkpoint rather than the different
 regrab checkpoint. Corrected rechecks pass; preserve initial failure logs.
 See docs/evidence/coop-validation-2026-10-29.md and its JSON/CSV metadata
 for source fingerprint, commands, hashes, outcomes and unverified scope.
+
+### 2026-10-29 - Host-specific packaging module resolution
+Resolved both packaging failures: explicitly import bundled Utility/Archive
+modules from the executing PowerShell PSHOME rather than relying on the
+inherited cross-edition PSModulePath. Synthetic tests verify known executable
+hashes and independently calculate ZIP/manifest checksums. Full CTest before:
+56/58; after: 58/58. No gameplay changes. Historical failures remain in the
+original evidence; see docs/evidence/packaging-validation-2026-10-29.md.

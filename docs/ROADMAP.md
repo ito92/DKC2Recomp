@@ -803,3 +803,6 @@ three grab orders, plus eventual native idle after stopping.
 - Cat O' Nine Tails: only actual contacted player joins spin; retain
   independent teammate and camera midpoint. Full level completion and
   simultaneous capture by multiple cats remain unverified.
+
+### Packaging validation follow-up (2026-10-29)
+- [x] Resolve cross-edition PowerShell packaging failures; synthetic snapshot and release checks pass, complete CTest 58/58.

@@ -1120,3 +1120,7 @@ records the external checkpoint inventory, reproducible replay commands and
 fresh results: 56/58 CTest checks and 44/45 targeted private checks pass.
 The two existing packaging failures and the known blank-SRAM item-pickup setup
 failure are recorded explicitly. Save files remain private and outside Git.
+
+Packaging follow-up: both module-resolution failures are fixed; the complete
+public suite now passes **58/58**. See [follow-up evidence](docs/evidence/packaging-validation-2026-10-29.md).
+The earlier evidence retains its original results.

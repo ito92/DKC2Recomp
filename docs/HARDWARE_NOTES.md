@@ -2151,3 +2151,6 @@ without distance checks. Co-op skips that duplication and recruitment.
 The camera selects $0AE8 (the cat) ahead of $0593 while spinning; routing
 this selection through the captured Kong allows the existing midpoint
 logic to retain a distant independently controlled teammate.
+
+### Packaging validation follow-up (2026-10-29)
+Synthetic packaging validation passes through CTest (58/58 public suite). This tooling change makes no new emulated or physical hardware claim.

@@ -2616,3 +2616,6 @@ this enemy only, select its captured Kong and admit valid captured state
 $48 to the existing midpoint policy. Otherwise camera panning clamps the
 faraway teammate against the screen edge despite removing paired capture.
 Keep native cat animation, contact, release actions and classic behavior.
+
+### Packaging validation follow-up (2026-10-29)
+Packaging scripts resolve bundled hash/ZIP modules from the running host PSHOME to tolerate cross-edition PSModulePath inheritance through CTest.

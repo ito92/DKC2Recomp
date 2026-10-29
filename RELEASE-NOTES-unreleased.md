@@ -243,7 +243,9 @@ limitations are recorded in [the evidence manifest](docs/evidence/coop-validatio
   the latest gameplay milestone.
 - The two existing failures are `create_windows_version` and `make_release`:
   their spawned PowerShell environment cannot resolve `Get-FileHash`.
-  Packaging is therefore not fully verified even though game builds succeed.
+  These were subsequently fixed by explicit host-module imports; synthetic
+  packaging and the complete public suite now pass **58/58**. See
+  [follow-up evidence](docs/evidence/packaging-validation-2026-10-29.md).
 - **44/45 targeted private checks passed**, including cat-grab ownership,
   successive hooks, coaster behavior, shared barrels, honey terrain, animal
   transitions and developer level completion.

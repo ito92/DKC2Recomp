@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Fixed packaging scripts failing under CTest when Windows PowerShell inherits
+  another edition's module path; added executable and archive checksum checks.
+
 - Fixed Kleever's dropping hooks recruiting the wrong player or refusing a
   second grab. Both players can share one hook in either order and jump off
   independently, preserving the boss hook camera and native release cooldown.
