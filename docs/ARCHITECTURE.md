@@ -2619,3 +2619,9 @@ Keep native cat animation, contact, release actions and classic behavior.
 
 ### Packaging validation follow-up (2026-10-29)
 Packaging scripts resolve bundled hash/ZIP modules from the running host PSHOME to tolerate cross-edition PSModulePath inheritance through CTest.
+
+### Item replay setup follow-up (2026-10-29)
+Blank-SRAM item acceptance uses actor-specific input-only approaches and
+retains Run after chest pickup. Assertions validate native chest identity
+and both owners across partner inputs and snapshot loading. Runtime policy
+is unchanged.

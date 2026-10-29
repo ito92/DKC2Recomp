@@ -30,8 +30,6 @@ def main():
     check(hashlib.sha256(rom.read_bytes()).hexdigest() ==
           "35421a9af9dd011b40b91f792192af9f99c93201d8d394026bdfb42cbf2d8633",
           "item input replay requires the supported headerless USA v1.0 ROM")
-    pickup = SEPARATE_PLAYERS + [(0x80080, 90), (0x82080, 30),
-                                (0, 60), (0x82080, 60)]
     with tempfile.TemporaryDirectory(prefix="dkc2-coop-item-input-") as tmp:
         directory = Path(tmp)
         for owner in range(2):
@@ -46,13 +44,23 @@ def main():
                                  route, state=state, save=save,
                                  kongs_pack=pack)
 
-            data = run("pickup", TEAM_START + (swap_ports(pickup) if owner == 0 else pickup),
-                       save=ground)
+            # The Kongs' jump/roll arcs differ: a mirrored fixed approach can
+            # hit the enemy during roll recovery. P1 restarts its roll before
+            # contact; P2 walks closer first. Keep Run held after the chest
+            # pickup rather than accidentally testing an intentional throw.
+            approach = (swap_ports(SEPARATE_PLAYERS) +
+                        [(0x80082, 90), (0x80080, 1), (0x80082, 38)]
+                        if owner == 0 else SEPARATE_PLAYERS +
+                        [(0x80080, 90), (0x82080, 30)])
+            data = run("pickup", TEAM_START + approach + [(owner_y, 30)], save=ground)
             held = data[-1]["held_slot"]
             check(held >= 0x0E9E and (held - 0x0DE2) % 0x5E == 0,
                   name + ": no held item")
             check(data[-1][carrier]["s"] == "000c" and data[-1][partner]["s"] == "0000",
                   name + ": pickup did not establish separate carrier/partner states")
+            check(any(sprite["slot"] == (held - 0x0DE2) // 0x5E and
+                      sprite["id"] == 0x01A8 for sprite in data[-1]["sprites"]),
+                  name + ": held item is not the native chest")
 
             # Run/pick both while grounded and after jumping. The original
             # shared-item read made the empty-handed jumper enter carry/throw.

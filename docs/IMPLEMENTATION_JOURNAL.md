@@ -8453,3 +8453,13 @@ inherited cross-edition PSModulePath. Synthetic tests verify known executable
 hashes and independently calculate ZIP/manifest checksums. Full CTest before:
 56/58; after: 58/58. No gameplay changes. Historical failures remain in the
 original evidence; see docs/evidence/packaging-validation-2026-10-29.md.
+
+### 2026-10-29 - Blank-SRAM item replay setup repair
+P1 reached the enemy during roll recovery; P2's old route released Run and
+threw the picked-up chest. Use actor-specific approaches, restart P1's roll,
+keep Run held during settling, and assert the held sprite is a native chest.
+All original ownership assertions now pass for both fixed slots, including
+partner inputs, ground/air snapshot loading and intentional owner release.
+No gameplay change. Complete CTest before/after this milestone: 58/58.
+The previous 44 private successes are retained; only the missing item case
+was rerun. See docs/evidence/item-input-validation-2026-10-29.md.

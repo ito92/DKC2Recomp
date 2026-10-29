@@ -2154,3 +2154,8 @@ logic to retain a distant independently controlled teammate.
 
 ### Packaging validation follow-up (2026-10-29)
 Synthetic packaging validation passes through CTest (58/58 public suite). This tooling change makes no new emulated or physical hardware claim.
+
+### Item replay acceptance follow-up (2026-10-29)
+Both native input ports pass chest ownership isolation after correcting the
+input-only pickup setup. No hardware model or physical-controller claim
+changed; complete public CTest remains 58/58.

@@ -1117,10 +1117,15 @@ and launches; the camera continues to include both live players.
 
 The [2026-10-29 evidence manifest](docs/evidence/coop-validation-2026-10-29.md)
 records the external checkpoint inventory, reproducible replay commands and
-fresh results: 56/58 CTest checks and 44/45 targeted private checks pass.
-The two existing packaging failures and the known blank-SRAM item-pickup setup
-failure are recorded explicitly. Save files remain private and outside Git.
+original results: 56/58 CTest checks and 44/45 targeted private checks passed.
+The packaging and blank-SRAM item-pickup setup failures were fixed in the
+follow-ups below. Save files remain private and outside Git.
 
 Packaging follow-up: both module-resolution failures are fixed; the complete
 public suite now passes **58/58**. See [follow-up evidence](docs/evidence/packaging-validation-2026-10-29.md).
 The earlier evidence retains its original results.
+
+Item-input follow-up: the blank-SRAM setup is repaired and both players pass
+ownership checks. See [the new evidence](docs/evidence/item-input-validation-2026-10-29.md).
+This reruns the previously failing case; the other 44 private successes remain
+recorded in the original validation. No gameplay code changed.

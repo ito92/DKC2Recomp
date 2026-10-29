@@ -806,3 +806,6 @@ three grab orders, plus eventual native idle after stopping.
 
 ### Packaging validation follow-up (2026-10-29)
 - [x] Resolve cross-edition PowerShell packaging failures; synthetic snapshot and release checks pass, complete CTest 58/58.
+
+- [x] Repair blank-SRAM item replay setup; both player slots pass partner
+  Run/Pick, Jump, ground/air snapshot loading and intentional owner release.

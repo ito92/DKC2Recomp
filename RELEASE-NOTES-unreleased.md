@@ -241,7 +241,7 @@ limitations are recorded in [the evidence manifest](docs/evidence/coop-validatio
 - Release unit, headless, native Windows desktop and SDL builds passed.
 - The complete available CTest run reported **56/58 passing** before and after
   the latest gameplay milestone.
-- The two existing failures are `create_windows_version` and `make_release`:
+- The two original failures were `create_windows_version` and `make_release`:
   their spawned PowerShell environment cannot resolve `Get-FileHash`.
   These were subsequently fixed by explicit host-module imports; synthetic
   packaging and the complete public suite now pass **58/58**. See
@@ -249,10 +249,12 @@ limitations are recorded in [the evidence manifest](docs/evidence/coop-validatio
 - **44/45 targeted private checks passed**, including cat-grab ownership,
   successive hooks, coaster behavior, shared barrels, honey terrain, animal
   transitions and developer level completion.
-- The remaining `check_coop_item_input.py` check fails its blank-SRAM P1 pickup
+- The original `check_coop_item_input.py` check failed its blank-SRAM P1 pickup
   setup before reaching the ownership assertions. This was already documented
   on 2026-10-22; it is not counted as a pass. Copied-save water/item ownership
-  and synthetic ownership checks pass.
+  and synthetic ownership checks pass. The setup was subsequently repaired:
+  both players now pass all item-input assertions, with native chest identity
+  checked too. See [follow-up evidence](docs/evidence/item-input-validation-2026-10-29.md).
 - Corrected outdated test approaches for staggered pole entry and water entry,
   and replaced an obsolete Rattly-deletion assertion with native unmounted-idle
   validation. Initial failed attempts and rechecks remain in the evidence.

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Repaired the blank-SRAM item-input regression setup; both player slots now
+  pass the existing ownership checks, with an additional native-chest assertion.
+
 - Fixed packaging scripts failing under CTest when Windows PowerShell inherits
   another edition's module path; added executable and archive checksum checks.
 
